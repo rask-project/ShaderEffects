@@ -19,7 +19,6 @@ string(REPLACE "/" "." PLUGIN_URI ${PLUGIN_PATH})
 qt_add_qml_module(${PROJECT_NAME}
     URI ${PLUGIN_URI}
     VERSION ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
-    RESOURCE_PREFIX /
     QML_FILES
         Genie.qml
         ItemBlur.qml

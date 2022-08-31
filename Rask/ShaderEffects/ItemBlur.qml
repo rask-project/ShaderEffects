@@ -6,6 +6,7 @@ Item {
 
     property variant source
     property real radius: 0.0
+    property real maxRadius: 64.0
 
     ShaderEffectSource {
         id: shaderSource
@@ -16,13 +17,16 @@ Item {
         visible: false
         sourceItem: control.source
         hideSource: control.visible
+        textureSize: Qt.size(
+                         control.remap(control.radius > control.maxRadius ? control.maxRadius : control.radius, control.maxRadius, 0, 10, control.width),
+                         control.remap(control.radius > control.maxRadius ? control.maxRadius : control.radius, control.maxRadius, 0, 10, control.height))
         smooth: true
     }
 
     ShaderEffect {
         property variant source: shaderSource
         property variant resolution: Qt.size(control.width, control.height)
-        property real radius: control.radius
+        property real radius: control.radius > control.maxRadius ? control.maxRadius : control.radius
 
         width: control.width
         height: control.height

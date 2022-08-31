@@ -1,6 +1,6 @@
 #version 440
 
-layout(location = 0) in vec2 coord;
+layout(location = 0) in vec2 qt_TexCoord0;
 layout(location = 0) out vec4 fragColor;
 
 layout(std140, binding = 0) uniform buf {
@@ -21,7 +21,7 @@ void main() {
     vec3 color = vec3(0.0f);
 
     const int mSize = 9;
-    const int kSize = ( mSize - 1 ) / 2;
+    const int kSize = (mSize - 1) / 2;
     float kernel[mSize];
 
     //create the 1-D kernel
@@ -42,10 +42,10 @@ void main() {
     //read out the texels
     for (int i = -kSize; i <= kSize; ++i) {
         for (int j = -kSize; j <= kSize; ++j) {
-            vec3 offset = texture(source, coord + vec2(float(i),float(j)) / radiusCalc ).rgb;
-            color += kernel[kSize + j] * kernel[kSize+i] * offset;
+            vec3 offset = texture(source, qt_TexCoord0 + vec2(float(i), float(j)) / radiusCalc).rgb;
+            color += kernel[kSize + j] * kernel[kSize + i] * offset;
         }
     }
 
-    fragColor = vec4(color/(Z*Z), 1.0);
+    fragColor = vec4(color / (Z * Z), 1.0);
 }

@@ -21,7 +21,7 @@ include(FetchDependencies)
 ### After add_executable or qt_add_executable
 FetchDependencies(RaskShaderEffects
      REPOSITORY https://github.com/rask-project/ShaderEffects.git
-     BRANCH main
+     BRANCH 1.0.0
      TARGET ${PROJECT_NAME}
 )
 ```

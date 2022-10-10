@@ -12,7 +12,7 @@ ShaderEffect {
     enabled: effect.source.status === Image.Ready
 
     mesh: GridMesh { resolution: Qt.size(10, 10) }
-    vertexShader: "qrc:/shaders/genieEffect.vert.qsb"
+    vertexShader: "qrc:/Rask/ShaderEffects/shaders/genie.vert.qsb"
 
     ParallelAnimation {
         id: animationMinize

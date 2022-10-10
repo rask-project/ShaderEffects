@@ -43,8 +43,8 @@ RoundItem {
 
     radius: 20
     source: Image {
-        property int clipWidth: sliderImageSize.value.toFixed(2)
-        property int clipHeight: sliderImageSize.value.toFixed(2)
+        property int clipWidth: 360
+        property int clipHeight: 360
         property int clipX: clipWidth - roundItem.width
         property int clipY: clipHeight - roundItem.height
 

@@ -1,5 +1,5 @@
 # ShaderEffects
-Qt Quick Shader Effects
+Qt 6 Quick Shader Effects
 
 QML plugin with some Shaders effects like:
 
